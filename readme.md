@@ -517,7 +517,7 @@ class FluxTransformer2DModel(
 
 ```
 
-- I tested the code on RTX Pro 6000 96GB Vram. I was able to reproduce the error.
+- I tested the code on RTX Pro 6000 96GB Vram. I was able to reproduce the error. You might need a GPU that has a lot of memory.
 ```
 torch._dynamo.exc.BackendCompilerFailed: backend='inductor' raised:
 RuntimeError: self must be row_major, got stride (1, 18432)
