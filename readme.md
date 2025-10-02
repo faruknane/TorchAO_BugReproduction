@@ -8,7 +8,7 @@
     - You may find the changes by searching "# CHANGE"
 
 The FluxTransformer2DModel code:
-
+```python
 @maybe_allow_in_graph
 class FluxSingleTransformerBlock(nn.Module):
     def __init__(self, dim: int, num_attention_heads: int, attention_head_dim: int, mlp_ratio: float = 4.0, gradient_checkpointing = False):
@@ -515,11 +515,11 @@ class FluxTransformer2DModel(
 
         return Transformer2DModelOutput(sample=output)
 
-
+```
 
 - I tested the code on RTX Pro 6000 96GB Vram. I was able to reproduce the error.
-
+```
 torch._dynamo.exc.BackendCompilerFailed: backend='inductor' raised:
 RuntimeError: self must be row_major, got stride (1, 18432)
-
+```
 
